@@ -8,11 +8,21 @@
 #     b
 ###############################################################################
 # Imports
-
+import operator
 
 # Body
 def most_frequent(s):
-    ...
+    list_s = list(s)
+    dict_letter_freq = dict()
+    for item in list_s:
+      if item.lower() in dict_letter_freq.keys():
+        dict_letter_freq[item.lower()] += 1
+      else:
+        dict_letter_freq[item.lower()] = 1
+
+    tuple_letters_freq = sorted(dict_letter_freq.items(), key=operator.itemgetter(1), reverse=True)
+    for counter in range(0,3):
+      print(tuple_letters_freq[counter][0])
 
 
 ###############################################################################
