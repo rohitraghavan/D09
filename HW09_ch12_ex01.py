@@ -21,8 +21,8 @@ def most_frequent(s):
         dict_letter_freq[item.lower()] = 1
 
     tuple_letters_freq = sorted(dict_letter_freq.items(), key=operator.itemgetter(1), reverse=True)
-    for counter in range(0,3):
-      print(tuple_letters_freq[counter][0])
+    for words, counter in tuple_letters_freq:
+      print(words)
 
 
 ###############################################################################

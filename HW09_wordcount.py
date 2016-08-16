@@ -70,11 +70,9 @@ def print_top(filename):
     dict_word_freq = build_word_dict_from_file(filename)
 
     tuple_words_freq = sorted(dict_word_freq.items(), key=operator.itemgetter(1), reverse=True)
-    for counter in range(0,20):
-        try:
-            print(tuple_words_freq[counter][0],tuple_words_freq[counter][1])
-        except:
-            break
+    tuple_words_freq_top20 = tuple_words_freq[:21]
+    for words, counter in tuple_words_freq_top20:
+            print(words, counter)
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
